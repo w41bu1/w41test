@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, Response
 
 app = Flask(__name__)
 
@@ -6,6 +6,10 @@ app = Flask(__name__)
 def home():
     return 'Hello, World!'
 
-@app.route('/about')
+@app.route('/svg')
 def about():
-    return 'About'
+    svg = """<?xml version="1.0" encoding="UTF-8"?>
+    <svg xmlns="http://www.w3.org/2000/svg">
+        <script>alert(document.domain)</script>
+    </svg>"""
+    return Response(svg, mimetype="image/svg+xml")
