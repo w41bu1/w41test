@@ -1,4 +1,4 @@
-Flask==3.0.3
 fastapi
+flask
 uvicorn
 starlette
