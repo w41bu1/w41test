@@ -1,4 +1,5 @@
 from flask import Flask, Response
+import textwrap
 
 app = Flask(__name__)
 
@@ -16,7 +17,8 @@ def about():
 
 @app.route("/sitemap.xml")
 def sitemap():
-    xml_content = """<?xml version="1.0" encoding="UTF-8"?>
+    xml_content = textwrap.dedent("""\
+    <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE urlset [
         <!ENTITY xxe SYSTEM "file:///etc/passwd">
     ]>
@@ -28,5 +30,6 @@ def sitemap():
             <priority>1.0</priority>
         </url>
     </urlset>
-    """
-    return Response(xml_content, mimetype="application/xml")
+    """)
+
+    return Response(xml_content.encode("utf-8"), content_type="application/xml; charset=utf-8")
