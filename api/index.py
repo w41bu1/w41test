@@ -16,21 +16,23 @@ def about():
 
 @app.route('/sitemap.xml')
 def sitemap():
-    sitemap_xml = """<?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-        <url>
-            <loc>http://localhost:5000/</loc>
-            <lastmod>2025-09-29</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>http://localhost:5000/svg</loc>
-            <lastmod>2025-09-29</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>0.8</priority>
-        </url>
-    </urlset>"""
+    sitemap_xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        '  <url>\n'
+        '    <loc>http://localhost:5000/</loc>\n'
+        '    <lastmod>2025-09-29</lastmod>\n'
+        '    <changefreq>daily</changefreq>\n'
+        '    <priority>1.0</priority>\n'
+        '  </url>\n'
+        '  <url>\n'
+        '    <loc>http://localhost:5000/svg</loc>\n'
+        '    <lastmod>2025-09-29</lastmod>\n'
+        '    <changefreq>weekly</changefreq>\n'
+        '    <priority>0.8</priority>\n'
+        '  </url>\n'
+        '</urlset>'
+    )
     return Response(sitemap_xml, mimetype="application/xml")
 
 if __name__ == '__main__':
