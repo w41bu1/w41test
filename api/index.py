@@ -20,7 +20,7 @@ def sitemap():
     <!DOCTYPE foo [ <!ENTITY xxe SYSTEM "file:///etc/passwd"> ]>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         <url>
-            <loc>http://localhost:5000/page1?a=&xxe;</loc>
+            <loc>http://localhost:5000/page1</loc>
         </url>
         <url>
             <loc>http://localhost:5000/page2</loc>
