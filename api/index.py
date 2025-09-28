@@ -28,4 +28,5 @@ def sitemap():
         <loc>http://localhost:5000/page3</loc>
     </url>
 </urlset>"""
-    return Response(xml_content, mimetype="application/xml")
+    return Response(xml_content.encode("utf-8"), mimetype="application/xml")
+
