@@ -1,4 +1,5 @@
-from fastapi import FastAPI, Response
+from fastapi import FastAPI, Request, HTTPException
+from fastapi.responses import RedirectResponse
 
 app = FastAPI()
 
@@ -22,3 +23,11 @@ def sitemap():
 </urlset>
 """
     return Response(content=xml_content, media_type="application/xml")
+
+# ---- Redirect endpoint ----
+@app.get("/redirect")
+def redirect(url: str):
+    if not (url.startswith("http://") or url.startswith("https://")):
+        raise HTTPException(status_code=400, detail="Invalid URL scheme. Only http/https allowed.")
+
+    return RedirectResponse(url=url)
