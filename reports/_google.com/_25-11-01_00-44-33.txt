@@ -1,0 +1,10 @@
+# Dirsearch started Sat Nov  1 00:44:59 2025 as: /usr/lib/python3/dist-packages/dirsearch/dirsearch.py -u google.com -F
+
+200   275B   https://www.google.com/.well-known/security.txt
+200     2KB  https://google.com/.well-known/assetlinks.json
+400     2KB  https://www.google.com/;json/
+400     2KB  https://www.google.com/;/admin
+400     2KB  https://www.google.com/;admin/
+400     2KB  https://www.google.com/;/login
+400     2KB  https://www.google.com/;/json
+400     2KB  https://www.google.com/;login/
